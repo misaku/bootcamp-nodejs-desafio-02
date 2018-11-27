@@ -1,0 +1,42 @@
+{
+    "name": "barbershop",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./src/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://mskjapa@bitbucket.org/mskjapa/barbershop.git"
+    },
+    "author": "Michel dos Santos Kuguio <michel.kuguio@gmail.com>",
+    "license": "ISC",
+    "private": true,
+    "homepage": "https://bitbucket.org/mskjapa/barbershop#readme",
+    "scripts": {
+        "start": "nodemon ./src/index.js -e js"
+    },
+    "dependencies": {
+        "bcrypt": "^3.0.2",
+        "connect-flash": "^0.1.1",
+        "connect-loki": "^1.1.0",
+        "cookie-parser": "^1.4.3",
+        "express": "^4.16.4",
+        "express-session": "^1.15.6",
+        "moment": "^2.22.2",
+        "multer": "^1.4.1",
+        "nunjucks": "^3.1.4",
+        "pg": "^7.6.1",
+        "pg-hstore": "^2.3.2",
+        "sequelize": "^4.41.2",
+        "session-file-store": "^1.2.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.9.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "prettier": "1.15.2",
+        "sequelize-cli": "^5.3.0"
+    }
+}
