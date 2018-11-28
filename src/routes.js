@@ -9,6 +9,7 @@ const AvaliableController = require("./app/controllers/AvaliableController");
 const SessionController = require("./app/controllers/SessionController");
 const FileController = require("./app/controllers/FileController");
 const DashboardController = require("./app/controllers/DashboardController");
+const ListController = require("./app/controllers/ListController");
 
 // MEDDLEWARES IMPORTS -------------------------------------------------------------------------------------------------
 const authMiddleware = require("./app/middlewares/auth");
@@ -34,6 +35,8 @@ routes.get("/app/avaliable/:provider", AvaliableController.index);
 routes.get("/app/logout", SessionController.destroy);
 routes.get("/signup", guestMiddleware, UserController.create);
 routes.get("/app/dashboard", DashboardController.index);
+routes.get("/app/list", ListController.index);
+routes.get("/app/list/:date", ListController.filter);
 
 // ROTAS POSTS ---------------------------------------------------------------------------------------------------------
 routes.post("/app/appointments/new/:provider", AppointmentController.store);

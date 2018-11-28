@@ -1,0 +1,9 @@
+{% for p in providers %}
+    <li class="provider {% if (p.avaliable)==false %}disabled {% endif %}">
+        <div>
+            <img src="/file/{{ p.User.avatar }}">
+            <strong>{{ p.User.name }}</strong>
+            <p>{{ p.date.format("HH:mm").toString() }}</p>
+        </div>
+    </li>
+{% endfor %}

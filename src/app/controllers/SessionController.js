@@ -8,7 +8,6 @@ class SessionController {
     async store (req, res) {
         const { email, password } = req.body;
         const user = await User.findOne({ where: { email } });
-        //console.log("usuario", user);
         if (!user) {
             req.flash("error", "Usuário não encontrado");
             return res.redirect("/");
