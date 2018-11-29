@@ -1,5 +1,7 @@
 const { User } = require("../models");
 
+const saveRedirectSession = require("../utils");
+
 class SessionController {
     create (req, res) {
         return res.render("auth/signin");
@@ -10,14 +12,14 @@ class SessionController {
         const user = await User.findOne({ where: { email } });
         if (!user) {
             req.flash("error", "Usuário não encontrado");
-            return res.redirect("/");
+            return saveRedirectSession(req, res, "/");
         }
         if (!await user.checkPassword(password)) {
             req.flash("error", "Senha Invalida");
-            return res.redirect("/");
+            return saveRedirectSession(req, res, "/");
         }
         req.session.user = user;
-        return res.redirect("/app/dashboard");
+        return saveRedirectSession(req, res, "/app/dashboard");
     }
 
     destroy (req, res) {

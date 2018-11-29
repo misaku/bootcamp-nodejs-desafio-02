@@ -1,4 +1,5 @@
 const { User, Appointment } = require("../models");
+const saveRedirectSession = require("../utils");
 
 class AppointmentController {
     async create (req, res) {
@@ -16,8 +17,7 @@ class AppointmentController {
             provider_id: provider,
             date
         });
-
-        return res.redirect("/app/dashboard");
+        return saveRedirectSession(req, res, "/app/dashboard");
     }
 }
 
